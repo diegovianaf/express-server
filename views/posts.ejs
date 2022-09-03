@@ -11,9 +11,14 @@
 
     <article>
       <% posts.forEach((item) => { %>
-        <div>
+        <div class="post">
           <h2><%= item.title %></h2>
           <p><%= item.content %></p>
+          <% if (item.stars) { %>
+            <% for( let index = 0; index < item.stars; index++ ) { %>
+              <img src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/star-icon.png" width="20">
+            <% } %>
+          <% } %>
         </div>
       <% }) %>
     </div>

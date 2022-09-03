@@ -18,7 +18,8 @@ app.get('/posts', (req, res) => {
     posts: [
       {
         title: 'Tech News',
-        content: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil velit impedit dolorum molestiae officia rem adipisci suscipit ea assumenda ullam! Exercitationem fugit molestiae eligendi commodi velit doloribus! Tempore, nostrum ea.'
+        content: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil velit impedit dolorum molestiae officia rem adipisci suscipit ea assumenda ullam! Exercitationem fugit molestiae eligendi commodi velit doloribus! Tempore, nostrum ea.',
+        stars: 3
       },
       {
         title: 'Creating a Server with Node.js',
@@ -26,7 +27,8 @@ app.get('/posts', (req, res) => {
       },
       {
         title: 'How to Become a Frontend Developer?',
-        content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, sapiente. Ullam neque aliquam dolor libero officiis consectetur corporis in natus atque cumque voluptate asperiores, debitis ex, incidunt quas.'
+        content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, sapiente. Ullam neque aliquam dolor libero officiis consectetur corporis in natus atque cumque voluptate asperiores, debitis ex, incidunt quas.',
+        stars: 5
       }
     ]
   })
