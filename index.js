@@ -13,8 +13,8 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.get('/test', (req, res) => {
-  res.send("It's working")
+app.get('/posts', (req, res) => {
+  res.render('posts')
 })
 
 app.use((req, res) => {
