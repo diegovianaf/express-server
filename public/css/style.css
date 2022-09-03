@@ -25,6 +25,15 @@ h1 {
   margin-bottom: 40px;
 }
 
+.upload-message {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form div {
+  margin-bottom: 12px;
+}
+
 footer {
   text-align: center;
   margin-top: 60px;

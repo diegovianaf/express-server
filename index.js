@@ -1,10 +1,15 @@
 const express = require('express')
 const path = require('path')
+const fs = require('fs')
+
 const app = express()
 
 app.set('view engine', 'ejs')
 
 app.use(express.static(path.join(__dirname, 'public')))
+
+// enables the server to receive data via post (form)
+app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
   res.render('index', {
@@ -32,6 +37,32 @@ app.get('/posts', (req, res) => {
       }
     ]
   })
+})
+
+app.get('/posts-upload', (req, res) => {
+  const { u } = req.query
+  res.render('posts-upload', {
+    title: 'Express | Post Upload',
+    uploaded: u,
+  })
+})
+
+app.post('/save-post', (req, res) => {
+  const { title, content } = req.body
+
+  const data = fs.readFileSync('./store/posts.json')
+  const posts = JSON.parse(data)
+
+  posts.push({
+    title,
+    content,
+  })
+
+  const postsString = JSON.stringify(posts)
+
+  fs.writeFileSync('./store/posts.json', postsString)
+
+  res.redirect('/posts-upload?u=1')
 })
 
 app.use((req, res) => {

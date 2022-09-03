@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head.ejs') %>
+</head>
+<body>
+  <%- include('partials/header.ejs') %>
+  
+  <section>
+    <h1>Posts Upload</h1>
+
+    <div class="upload-message">
+      <% if (uploaded) { %>
+        Post uploaded successfully!
+      <% } %>
+    </div>
+
+    <form action="/save-post" method="post">
+      <div>
+        <input type="text" name="title" placeholder="Enter the Title">
+      </div>
+      <div>
+        <textarea name="content" id="content" cols="30" rows="10" placeholder="Enter the Content"></textarea>
+      </div>
+      <button type="submit">Upload</button>
+    </form>
+  </section>
+
+  <%- include('partials/footer.ejs') %>
+  <%- include('partials/foot.ejs') %>
+</body>
+</html>
