@@ -2,20 +2,15 @@ const express = require('express')
 const path = require('path')
 const app = express()
 
-// STATIC FILES
-// const staticFolder = path.join(__dirname, 'views')
-// const expressStatic = express.static(staticFolder)
-// app.use(expressStatic)
-app.use(express.static(path.join(__dirname, 'views')))
+app.set('view engine', 'ejs')
 
-// PUBLIC FILES
-// const publicFolder = path.join(__dirname, 'public')
-// const expressPublic = express.static(publicFolder)
-// app.use(expressPublic)
+// not necessary when we use ejs
+// app.use(express.static(path.join(__dirname, 'views')))
+
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res) => {
-  res.render('views/index')
+  res.render('index')
 })
 
 app.get('/test', (req, res) => {
