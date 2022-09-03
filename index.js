@@ -1,9 +1,21 @@
 const express = require('express')
-const res = require('express/lib/response')
+const path = require('path')
 const app = express()
 
+// STATIC FILES
+// const staticFolder = path.join(__dirname, 'views')
+// const expressStatic = express.static(staticFolder)
+// app.use(expressStatic)
+app.use(express.static(path.join(__dirname, 'views')))
+
+// PUBLIC FILES
+// const publicFolder = path.join(__dirname, 'public')
+// const expressPublic = express.static(publicFolder)
+// app.use(expressPublic)
+app.use(express.static(path.join(__dirname, 'public')))
+
 app.get('/', (req, res) => {
-  res.send('Hallo Leute')
+  res.render('views/index')
 })
 
 app.get('/test', (req, res) => {
