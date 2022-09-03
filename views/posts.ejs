@@ -6,9 +6,18 @@
 <body>
   <%- include('partials/header.ejs') %>
   
-  <article>
+  <section>
     <h1>Posts</h1>
-  </article>
+
+    <article>
+      <% posts.forEach((item) => { %>
+        <div>
+          <h2><%= item.title %></h2>
+          <p><%= item.content %></p>
+        </div>
+      <% }) %>
+    </div>
+  </section>
 
   <%- include('partials/footer.ejs') %>
   <%- include('partials/foot.ejs') %>
